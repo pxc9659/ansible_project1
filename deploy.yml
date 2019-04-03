@@ -4,5 +4,5 @@
   tasks:
   - name: Run yum update on servers
     yum:
-      name: *
+      name: '*'
       state: latest
