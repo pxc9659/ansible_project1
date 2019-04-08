@@ -1,0 +1,15 @@
+---
+- hosts: all
+  remote_user: root
+  tasks:
+    - name: change yum repository
+      yum_repository:
+         baseurl: http://download-ib01.fedoraproject.org/pub/epel/7/x86_64/
+    
+    - name: rpm command
+      command: rpm -Uvh epel-release*rpm
+
+    - name: Install game
+      yum:
+        name: nudoku
+        state: latest
